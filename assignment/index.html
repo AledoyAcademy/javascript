@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ <style>
+  #success{
+      color: white;
+      font-weight: bold;
+      background-color: green;
+      padding: 10px;
+      display: none;
+  }
+    #error{
+      color: white;
+      font-weight: bold;
+      background-color: red;
+      padding: 10px;
+      display: none;
+    }
+   .error{
+      color: red;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+ </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registration Form</h1>
+
+    <div id="success"></div>
+    <div id="error"></div>
+<br>
+    <form action="/submit" method="POST" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="first-name">First Name:</label>
+        <input type="text" class="form-control" id="first-name" name="first-name">
+      </div>
+
+      <div class="form-group">
+        <label for="last-name">Last Name:</label>
+        <input type="text" class="form-control" id="last-name" name="last-name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" id="email" name="email"><br>
+        <span id="email-error" class="error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone-number">Phone Number:</label>
+        <input type="tel" class="form-control" id="phone-number" name="phone-number"><br>
+        <span id="phone-error" class="error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="field-courses">Field Courses:</label>
+        <select class="form-control" id="field-courses" name="field-courses">
+          <option value="">Select a course</option>
+          <option value="course1">Course 1</option>
+          <option value="course2">Course 2</option>
+          <option value="course3">Course 3</option>
+        </select>
+      </div>
+
+      <hr>
+
+      
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control user-text" id="username" name="username" onkeyup="checkUser()">
+        <span id="user-error" class="error"></span>
+      </div>
+
+      
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control user-text" id="password" name="password">
+      </div>
+
+      
+      <div class="form-group">
+        <label for="confirm">Confirm Password:</label>
+        <input type="password" class="form-control user-text" id="password2" name="password2"><br>
+        <span id="pass-error" class="error"></span>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="terms" name="terms">
+        <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div id="thank-you" style="display: none;">
+      <h2>Thank You!</h2>
+      <p>Your form has been submitted.</p>
+    </div>
+  </div>
+
+  <script src="script.js"> </script>
+</body>
+</html>
