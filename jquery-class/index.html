@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <script src="jquery-3.7.0.min.js"></script>
+    <script>
+
+$(function(){
+   
+$('#header, #demo, #demo2, #demo3').hide();
+
+$('#clickme').click(function(){
+    $('#header, #demo, #demo2, #demo3').slideToggle(100, function(){
+    alert('toggle completed');
+    });
+    $(this).html('Button clicked');
+})
+
+$('#increase').click(function(){
+    $('#demo, #demo2').css('font-size','23px');
+    $(this).html('Button clicked');
+})
+
+$('#decrease').click(function(){
+    $('#demo, #demo2').css('font-size','13px');
+    $(this).html('Button clicked');
+})
+
+$('#print').click(function(){
+    window.print();
+    $(this).html('Button clicked');
+})
+
+})
+
+    </script>
+</head>
+
+<body>
+    <h1 id="header">Welcome to my first Javascipt class</h1>
+    <div id="demo">I am a gentle learner</div>
+    <div id="demo2">I love girls so much because I am fair in complexion</div>
+    <div id="demo3"></div>
+    <button id="clickme">Click here</button>
+    <button id="increase" class="colo">Increase my fonts</button>
+    <button id="decrease">Reduce my name</button>
+    <button id="print">Print my head</button>
+    
+</body>
+</html>
